@@ -1,0 +1,44 @@
+[project]
+name = "$include{project_name.in.py}"
+version = "0.1"
+description = ""
+license = {text = "GPL v3 or later"}
+authors = [
+    {name = "$include{author.in.py}", email = "$include{email.in.py}"}
+]
+readme = "README.md"
+urls = {Homepage = "https://github.com/rrthomas/$include{project_slug.in.py}"}
+requires-python = ">= 3.9"
+dependencies = [
+    "importlib_resources >= 5.10",
+]
+classifiers = [
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+]
+
+[project.scripts]
+$include{project_slug.in.py} = "$include{project_slug.in.py}:main"
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[build-system]
+requires = [
+    "setuptools >= 62.3.0",
+]
+
+[tool.setuptools]
+packages = [
+    "$include{project_slug.in.py}",
+]
+
+[tool.ruff.lint]
+select = ["D", "E", "F", "I", "UP"]
+ignore = ["D1", "D401", "D415", "E501"]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
