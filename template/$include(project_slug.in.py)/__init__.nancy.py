@@ -32,4 +32,4 @@ your option) any later version. There is no warranty.""",
 
     args = parser.parse_args(argv)
 
-    print("Hello from $include(project_slug.in.py)!")
+    print("Hello from $include(project_name.in.py)!")
