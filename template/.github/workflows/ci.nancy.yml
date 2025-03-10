@@ -28,4 +28,4 @@ jobs:
           tox
           make build
           pip install .
-          $include{project_slug.in.py} --help
+          $include(project_slug.in.py) --help

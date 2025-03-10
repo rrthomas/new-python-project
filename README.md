@@ -45,6 +45,6 @@ The project is set up with a `pyproject.toml` and Makefile to build, test and pu
 
 ## Copyright and Disclaimer
 
-$include{project_name.in.py} is copyright $include{author.in.py}, and is
+$include(project_name.in.py) is copyright $include(author.in.py), and is
 free software, licensed under the GNU Public License version 3, or, at your
 option, any later version. See the file COPYING.
