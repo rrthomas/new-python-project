@@ -3,4 +3,4 @@
 import os
 
 
-print(os.environ["AUTHOR"])
+print(os.environ["AUTHOR"], end="")

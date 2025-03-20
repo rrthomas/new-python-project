@@ -7,4 +7,4 @@
 from datetime import datetime
 
 
-print(datetime.now().year)
+print(datetime.now().year, end="")

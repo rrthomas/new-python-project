@@ -3,4 +3,4 @@
 import os
 
 
-print(os.environ["DESCRIPTION"])
+print(os.environ["DESCRIPTION"], end="")

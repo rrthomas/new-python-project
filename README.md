@@ -40,7 +40,8 @@ make build
 PYTHONPATH=. python -m project_name
 ```
 
-The project is set up with a `pyproject.toml` and Makefile to build, test and publish it, and basic command-line handling.
+The project is set up with a `pyproject.toml` and Makefile to build, test
+and publish it, and basic command-line handling.
 
 
 ## Copyright and Disclaimer

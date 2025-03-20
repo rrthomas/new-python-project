@@ -3,4 +3,4 @@
 import os
 
 
-print(os.environ["EMAIL"])
+print(os.environ["EMAIL"], end="")

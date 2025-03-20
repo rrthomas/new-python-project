@@ -1,0 +1,14 @@
+"""$run(project_name.in.py): Main module.
+
+© $run(author.in.py) <$run(email.in.py)> $run(year.in.py)
+Released under the GPL version 3, or (at your option) any later version.
+"""
+
+import re
+import sys
+
+from $run(project_slug.in.py) import main
+
+
+sys.argv[0] = re.sub(r"__main__.py$", "$run(project_slug.in.py)", sys.argv[0])
+main()

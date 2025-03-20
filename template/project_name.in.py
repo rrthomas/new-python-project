@@ -3,4 +3,4 @@
 import os
 
 
-print(os.environ['PROJECT_NAME'])
+print(os.environ['PROJECT_NAME'], end="")

@@ -13,4 +13,4 @@ project_name = (
     .replace(" ", "_")
     .replace("-", "_")
 )
-print(project_name)
+print(project_name, end="")
