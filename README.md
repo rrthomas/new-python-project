@@ -46,6 +46,6 @@ and publish it, and basic command-line handling.
 
 ## Copyright and Disclaimer
 
-$include(project_name.in.py) is copyright $include(author.in.py), and is
-free software, licensed under the GNU Public License version 3, or, at your
-option, any later version. See the file COPYING.
+python-project-template is copyright Reuben Thomas, and is free software,
+licensed under the GNU Public License version 3, or, at your option, any
+later version. See the file COPYING.
