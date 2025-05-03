@@ -20,7 +20,7 @@ pip install nancy
 Then, clone the template’s git repository with:
 
 ```
-git clone https://github.com/rrthomas/python-project/template
+git clone https://github.com/rrthomas/python-project-template
 ```
 
 
