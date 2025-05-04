@@ -20,7 +20,7 @@ jobs:
         if: ${{ matrix.os == 'macos-latest' }}
         run: |
           brew install make
-          echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
+          echo "$(brew --prefix make)/libexec/gnubin" >> \$GITHUB_PATH
       - name: Install Python dependencies
         run: pip install tox build setuptools toml-cli
       - name: Build

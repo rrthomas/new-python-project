@@ -29,7 +29,7 @@ git clone https://github.com/rrthomas/python-project-template
 Run Nancy as follows, setting the variables appropriately:
 
 ```
-env PROJECT_NAME="project-name" AUTHOR="My Name" EMAIL=my@email.org DESCRIPTION="Description of my new project" nancy /path/to/python-project-template/template /path/to/new-project
+env PROJECT_NAME="project-name" AUTHOR="My Name" EMAIL=my@email.org DESCRIPTION="Description of my new project" nancy --process-hidden /path/to/python-project-template/template /path/to/new-project
 ```
 
 You can run your new program:
