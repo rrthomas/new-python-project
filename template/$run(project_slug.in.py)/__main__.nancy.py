@@ -1,6 +1,7 @@
-"""$run(project_name.in.py): Main module.
+"""$run(project_name.in.py): Launcher.
 
-© $run(author.in.py) <$run(email.in.py)> $run(year.in.py)
+© $run(author.in.py) <$run(email.in.py)> $run(year.in.py).
+
 Released under the GPL version 3, or (at your option) any later version.
 """
 

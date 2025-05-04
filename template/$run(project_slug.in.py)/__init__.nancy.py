@@ -1,5 +1,9 @@
-# © $run(author.in.py) <$run(email.in.py)> $run(year.in.py)
-# Released under the GPL version 3, or (at your option) any later version.
+"""$run(project_name.in.py): Main module.
+
+© $run(author.in.py) <$run(email.in.py)> $run(year.in.py).
+
+Released under the GPL version 3, or (at your option) any later version.
+"""
 
 import argparse
 import importlib.metadata
@@ -33,7 +37,6 @@ your option) any later version. There is no warranty.""",
         help="specify the greeting to use",
     )
     warnings.showwarning = simple_warning(parser.prog)
-
     args = parser.parse_args(argv)
 
     print(f"{args.greeting or 'Hello'} from $run(project_name.in.py)!")
