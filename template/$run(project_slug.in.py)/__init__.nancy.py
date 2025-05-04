@@ -28,8 +28,12 @@ https://github.com/rrthomas/$run(project_slug.in.py)
 Distributed under the GNU General Public License version 3, or (at
 your option) any later version. There is no warranty.""",
     )
+    parser.add_argument(
+        "--greeting",
+        help="specify the greeting to use",
+    )
     warnings.showwarning = simple_warning(parser.prog)
 
     args = parser.parse_args(argv)
 
-    print("Hello from $run(project_name.in.py)!")
+    print(f"{args.greeting or 'Hello'} from $run(project_name.in.py)!")
