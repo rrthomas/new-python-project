@@ -3,34 +3,21 @@
 https://github.com/rrthomas/python-project-template  
 © Reuben Thomas <rrt@sc3d.org>  
 
-This is a simple Python project template which you can use to create a new
-Python project. It uses the [Nancy](https://github.com/rrthomas/nancy/)
-templating system.
+This is a simple program which you can use to create a new Python project
+from a built-in template. It uses the
+[Nancy](https://github.com/rrthomas/nancy/) templating system.
 
 
 ## Installation
 
-You will need to have Python and Nancy. Nancy can be installed from the
-Python package index with:
-
 ```
-pip install nancy
-```
-
-Then, clone the template’s git repository with:
-
-```
-git clone https://github.com/rrthomas/python-project-template
+pip install python-project-template
 ```
 
 
 ## Creating a new project
 
-Run Nancy as follows, setting the variables appropriately:
-
-```
-env PROJECT_NAME="project-name" AUTHOR="My Name" EMAIL=my@email.org DESCRIPTION="Description of my new project" nancy --process-hidden /path/to/python-project-template/template /path/to/new-project
-```
+Run `python-project-template DIRECTORY`. The program will prompt you for basic information about the project, attempting to give sensible default values, and then create the project in the given directory.
 
 You can run your new program:
 
@@ -40,8 +27,8 @@ make build
 PYTHONPATH=. python -m project_name
 ```
 
-The project is set up with a `pyproject.toml` and Makefile to build, test
-and publish it, and basic command-line handling.
+The project is set up in a new git repository with a `pyproject.toml` and
+Makefile to build, test and publish it, and basic command-line handling.
 
 
 ## Copyright and Disclaimer
