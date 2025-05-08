@@ -8,7 +8,7 @@ $run(project_name.in.py) is $run(description.in.py).
 
 ## Installation
 
-Install with `pip`: `pip install $run(project_slug.in.py)`.
+Install with `pip`: `pip install $run(project_module.in.py)`.
 
 
 ## Copyright and Disclaimer

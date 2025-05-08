@@ -13,7 +13,7 @@ import warnings
 from .warnings_util import simple_warning
 
 
-VERSION = importlib.metadata.version("$run(project_slug.in.py)")
+VERSION = importlib.metadata.version("$run(project_module.in.py)")
 
 
 def main(argv: list[str] = sys.argv[1:]) -> None:

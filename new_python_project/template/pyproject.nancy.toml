@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [project.scripts]
-$run(project_slug.in.py) = "$run(project_slug.in.py):main"
+$run(project_module.in.py) = "$run(project_module.in.py):main"
 
 [project.optional-dependencies]
 test = ["pytest"]
@@ -30,7 +30,7 @@ requires = [
 
 [tool.setuptools]
 packages = [
-    "$run(project_slug.in.py)",
+    "$run(project_module.in.py)",
 ]
 
 [tool.ruff.lint]

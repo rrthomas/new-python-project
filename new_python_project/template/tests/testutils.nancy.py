@@ -13,7 +13,7 @@ from typing import Optional
 import pytest
 from pytest import CaptureFixture, LogCaptureFixture
 
-from $run(project_slug.in.py) import main
+from $run(project_module.in.py) import main
 
 
 def passing_cli_test(

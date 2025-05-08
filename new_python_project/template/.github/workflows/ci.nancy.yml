@@ -28,4 +28,4 @@ jobs:
           tox
           make build
           pip install .
-          $run(project_slug.in.py) --help
+          $run(project_executable.in.py) --help
