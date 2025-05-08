@@ -9,6 +9,9 @@ authors = [
 readme = "README.md"
 urls = {Homepage = "https://github.com/rrthomas/python_project"}
 requires-python = ">= 3.11"
+dependencies = [
+    "nancy ~= 10.0",
+]
 classifiers = [
     "Environment :: Console",
     "Programming Language :: Python :: 3",
