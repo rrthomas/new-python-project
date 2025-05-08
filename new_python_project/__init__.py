@@ -1,4 +1,4 @@
-"""python-project-template: Main module.
+"""new_python-project: Main module.
 
 © Reuben Thomas <rrt@sc3d.org> 2025.
 
@@ -21,7 +21,7 @@ from typing import Any
 from .warnings_util import simple_warning
 
 
-VERSION = importlib.metadata.version("python_project_template")
+VERSION = importlib.metadata.version("new_python_project")
 
 
 def input_with_default(prompt: str, default: str) -> str:
@@ -41,7 +41,7 @@ def main(argv: list[str] = sys.argv[1:]) -> None:
         action="version",
         version=f"""%(prog)s {VERSION}
 © 2025 Reuben Thomas <rrt@sc3d.org>
-https://github.com/rrthomas/python_project_template
+https://github.com/rrthomas/new-python-project
 Distributed under the GNU General Public License version 3, or (at
 your option) any later version. There is no warranty.""",
     )
@@ -111,7 +111,7 @@ your option) any later version. There is no warranty.""",
     with chdir(args.project_dir):
         subprocess.check_call(["git", "add", "."])
         subprocess.check_call(
-            ["git", "commit", "-m", "Initial commit (by python-project-template)"]
+            ["git", "commit", "-m", "Initial commit (by new-python-project)"]
         )
 
         # Create GitHub project if desired

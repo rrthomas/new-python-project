@@ -1,1 +1,1 @@
-Goodbye from python-project-template!
+Goodbye from new-python-project!

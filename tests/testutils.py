@@ -5,15 +5,10 @@ Copyright (c) Reuben Thomas 2023-2025.
 Released under the GPL version 3, or (at your option) any later version.
 """
 
-import filecmp
-import os
-from tempfile import TemporaryDirectory
-from typing import Optional
-
 import pytest
 from pytest import CaptureFixture, LogCaptureFixture
 
-from python_project_template import main
+from new_python_project import main
 
 
 def passing_cli_test(

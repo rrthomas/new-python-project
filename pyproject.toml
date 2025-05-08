@@ -1,5 +1,5 @@
 [project]
-name = "python-project-template"
+name = "new-python-project"
 version = "0.1"
 description = "Create a Python project from a simple template"
 license = "GPL-3.0-or-later"
@@ -7,7 +7,7 @@ authors = [
     {name = "Reuben Thomas", email = "rrt@sc3d.org"}
 ]
 readme = "README.md"
-urls = {Homepage = "https://github.com/rrthomas/python_project_template"}
+urls = {Homepage = "https://github.com/rrthomas/python_project"}
 requires-python = ">= 3.11"
 classifiers = [
     "Environment :: Console",
@@ -15,7 +15,7 @@ classifiers = [
 ]
 
 [project.scripts]
-python_project_template = "python_project_template:main"
+new_python_project = "new_python_project:main"
 
 [project.optional-dependencies]
 test = ["pytest"]
@@ -27,7 +27,7 @@ requires = [
 
 [tool.setuptools]
 packages = [
-    "python_project_template",
+    "new_python_project",
 ]
 
 [tool.ruff.lint]
