@@ -36,6 +36,15 @@ packages = [
 [tool.setuptools.package-data]
 new_python_project = ["template/**"]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.pyright]
+exclude = ["new_python_project/template/**"]
+
+[tool.ruff]
+extend-exclude = ["new_python_project/template/**"]
+
 [tool.ruff.lint]
 select = ["D", "E", "F", "I", "UP"]
 ignore = ["D1", "D401", "D415", "E501"]
