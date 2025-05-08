@@ -15,7 +15,7 @@ classifiers = [
 ]
 
 [project.scripts]
-new_python_project = "new_python_project:main"
+new-python-project = "new_python_project:main"
 
 [project.optional-dependencies]
 test = ["pytest"]
