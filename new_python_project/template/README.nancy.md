@@ -3,7 +3,7 @@
 https://github.com/rrthomas/$run(project_slug.in.py)  
 © $run(author.in.py) <$run(email.in.py)>  
 
-$run(project_name.in.py) is…
+$run(project_name.in.py) is $run(description.in.py).
 
 
 ## Installation
