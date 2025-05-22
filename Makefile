@@ -22,6 +22,7 @@ release:
 	git push --tags
 
 loc:
-	cloc --exclude-content="ptext module" $(PACKAGE)/*.py
+	cloc $(PACKAGE)
+	cloc tests/*.py
 
 .PHONY: dist build
