@@ -102,7 +102,7 @@ your option) any later version. There is no warranty.""",
             }
         )
     subprocess.check_call(
-        ["nancy", template_dir, args.project_dir],
+        ["nancy", "--process-hidden", template_dir, args.project_dir],
         env=subprocess_env,
     )
 
