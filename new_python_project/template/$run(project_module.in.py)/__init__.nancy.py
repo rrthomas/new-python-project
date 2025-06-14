@@ -28,7 +28,7 @@ def main(argv: list[str] = sys.argv[1:]) -> None:
         action="version",
         version=f"""%(prog)s {VERSION}
 © $run(year.in.py) $run(author.in.py) <$run(email.in.py)>
-https://github.com/rrthomas/$run(project_slug.in.py)
+$run(project_home_page.in.py)
 Distributed under the GNU General Public License version 3, or (at
 your option) any later version. There is no warranty.""",
     )

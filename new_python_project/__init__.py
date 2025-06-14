@@ -11,6 +11,7 @@ import importlib.resources
 import os
 import os.path
 import pwd
+import shutil
 import subprocess
 import sys
 import tomllib
@@ -76,6 +77,7 @@ your option) any later version. There is no warranty.""",
         project["name"] = input_with_default(
             "Name of project", os.path.basename(args.project_dir)
         )
+    project["slug"] = project["name"].lower().replace(" ", "-")
     if "description" not in project:
         project["description"] = input_with_default(
             "Short description of project", "FILL ME IN"
@@ -88,6 +90,32 @@ your option) any later version. There is no warranty.""",
         project["authors"][0]["email"] = input_with_default(
             "Email", os.environ.get("EMAIL", "")
         )
+    use_github = args.github or "github_user" in project
+    if use_github and "github_user" not in project:
+        gh_command = shutil.which("gh")
+        if gh_command is None:
+            default_github_user = os.getlogin()
+        else:
+            default_github_user = (
+                subprocess.check_output(["gh", "api", "user", "--jq", ".login"])
+                .decode("utf-8")
+                .replace("\n", "")
+            )
+        project["github_user"] = input_with_default(
+            "GitHub user",
+            default_github_user,
+        )
+    if "home_page" not in project:
+        if use_github:
+            default_url = (
+                f"https://github.com/{project['github_user']}/{project['slug']}"
+            )
+        else:
+            default_url = f"https://{project['slug']}.example.net"
+        project["home_page"] = input_with_default(
+            "Project home page",
+            default_url,
+        )
 
     # Template the project
     with importlib.resources.as_file(importlib.resources.files()) as fspath:
@@ -96,15 +124,18 @@ your option) any later version. There is no warranty.""",
         subprocess_env.update(
             {
                 "PROJECT_NAME": project["name"],
+                "PROJECT_HOME_PAGE": project["home_page"],
                 "AUTHOR": project["authors"][0]["name"],
                 "EMAIL": project["authors"][0]["email"],
                 "DESCRIPTION": project["description"],
             }
         )
-    subprocess.check_call(
-        ["nancy", "--process-hidden", template_dir, args.project_dir],
-        env=subprocess_env,
-    )
+        if use_github:
+            subprocess_env["GITHUB_USER"] = project["github_user"]
+        subprocess.check_call(
+            ["nancy", "--process-hidden", template_dir, args.project_dir],
+            env=subprocess_env,
+        )
 
     # Create the project's git repo and make initial commit
     subprocess.check_call(["git", "init", args.project_dir])
