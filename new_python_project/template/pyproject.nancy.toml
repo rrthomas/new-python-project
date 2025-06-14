@@ -1,7 +1,7 @@
 [project]
 name = "$run(project_name.in.py)"
 version = "0.1"
-description = ""
+description = "$run(description.in.py)"
 license = "GPL-3.0-or-later"
 authors = [
     {name = "$run(author.in.py)", email = "$run(email.in.py)"}
