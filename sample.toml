@@ -1,0 +1,18 @@
+[project]
+# The project name does not have to be the same as the directory
+name = "foo-bar"
+
+# A short description, used by the --help option and pyproject.toml.
+description = "A demonstration of new-python-project."
+
+# There can only be one author at present.
+authors = [
+    {name = "Reuben Thomas", email = "rrt@sc3d.org"}
+]
+
+# With this option, a GitHub project will automatically be created.
+github_user = "myuser"
+
+# The home page defaults to the GitHub page if creating a GitHub project,
+# but you can still override it.
+home_page = "https://new_project.example.net"

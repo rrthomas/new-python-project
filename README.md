@@ -17,7 +17,16 @@ pip install new-python-project
 
 ## Creating a new project
 
-Run `new-python-project DIRECTORY`. The program will prompt you for basic information about the project, attempting to give sensible default values, and then create the project in the given directory.
+Run `new-python-project DIRECTORY`. The program will prompt you for basic
+information about the project, attempting to give sensible default values,
+and then create the project in the given directory.
+
+You can add the `--github` option to automatically create a GitHub project.
+
+You can also store project information in a TOML file; see
+[`sample.toml`](sample.toml) for a commented example.
+
+See `new-python-project --help` for more information.
 
 You can run your new program:
 
