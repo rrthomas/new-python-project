@@ -8,7 +8,7 @@ authors = [
 ]
 readme = "README.md"
 urls = {Homepage = "$run(project_home_page.in.py)"}
-requires-python = ">= 3.9"
+requires-python = ">= 3.10"
 dependencies = [
     "importlib_resources >= 5.10",
 ]
@@ -49,7 +49,7 @@ lines-after-imports = 2
 convention = "google"
 
 [tool.tox]
-env_list = ["3.9", "3.10", "3.11", "3.12", "3.13"]
+env_list = ["3.10", "3.11", "3.12", "3.13"]
 
 [tool.tox.env_run_base]
 deps = ["pyright", "pytest", "ruff", "types-setuptools"]
