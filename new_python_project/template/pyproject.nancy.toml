@@ -33,6 +33,11 @@ packages = [
     "$run(project_module.in.py)",
 ]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::UserWarning"]
+xfail_strict = true
+
 [tool.ruff.lint]
 select = ["D", "E", "F", "I", "UP"]
 ignore = ["D1", "D401", "D415", "E501"]
@@ -42,3 +47,15 @@ lines-after-imports = 2
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.tox]
+env_list = ["3.9", "3.10", "3.11", "3.12", "3.13"]
+
+[tool.tox.env_run_base]
+deps = ["pyright", "pytest", "ruff", "types-setuptools"]
+commands = [
+    ["pyright", "$run(project_module.in.py)"],
+    ["ruff", "check", "$run(project_module.in.py)"],
+    ["pytest", {replace = "posargs", extend = true}],
+]
+extras = ["test"]

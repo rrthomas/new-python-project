@@ -42,6 +42,8 @@ new_python_project = [
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+filterwarnings = ["ignore::UserWarning"]
+xfail_strict = true
 
 [tool.pyright]
 exclude = ["new_python_project/template/**"]
@@ -58,3 +60,15 @@ lines-after-imports = 2
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
+
+[tool.tox]
+env_list = ["3.12", "3.13"]
+
+[tool.tox.env_run_base]
+deps = ["pyright", "pytest", "ruff", "types-setuptools"]
+commands = [
+    ["pyright", "new_python_project"],
+    ["ruff", "check", "new_python_project"],
+    ["pytest", {replace = "posargs", extend = true}],
+]
+extras = ["test"]
