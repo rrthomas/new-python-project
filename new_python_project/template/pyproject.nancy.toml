@@ -18,7 +18,7 @@ classifiers = [
 ]
 
 [project.scripts]
-$run(project_module.in.py) = "$run(project_module.in.py):main"
+$run(project_executable.in.py) = "$run(project_module.in.py):main"
 
 [project.optional-dependencies]
 test = ["pytest"]

@@ -11,7 +11,7 @@ from collections.abc import Iterator
 from pathlib import Path
 
 import pytest
-from nancy import main
+from $run(project_module.in.py) import main
 from pytest import CaptureFixture, LogCaptureFixture
 from testutils import failing_cli_test, passing_cli_test
 
@@ -40,7 +40,7 @@ def test_help_option_should_produce_output(capsys: CaptureFixture[str]) -> None:
         main(["--help"])
     assert e.type is SystemExit
     assert e.value.code == 0
-    assert capsys.readouterr().out.find("A simple templating system.") != -1
+    assert capsys.readouterr().out.find("$run(description.in.py)") != -1
 
 
 def test_greeting(

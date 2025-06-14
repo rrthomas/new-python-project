@@ -1,0 +1,6 @@
+[project]
+name = "foo-bar"
+description = "Demo project"
+authors = [
+    {name = "Reuben Thomas", email = "rrt@sc3d.org"}
+]

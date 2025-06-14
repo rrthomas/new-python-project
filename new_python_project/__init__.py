@@ -25,11 +25,6 @@ from .warnings_util import simple_warning
 VERSION = importlib.metadata.version("new_python_project")
 
 
-def input_with_default(prompt: str, default: str) -> str:
-    response = input(f"{prompt} [{default}]: ")
-    return response or default
-
-
 def main(argv: list[str] = sys.argv[1:]) -> None:
     # Command-line arguments
     parser = argparse.ArgumentParser(
@@ -47,12 +42,19 @@ Distributed under the GNU General Public License version 3, or (at
 your option) any later version. There is no warranty.""",
     )
     parser.add_argument(
+        "--noprompt",
+        action="store_true",
+        help="do not prompt; use default values for details",
+    )
+    parser.add_argument(
         "--github",
         action="store_true",
         help="create a GitHub project",
     )
     parser.add_argument(
-        "project_dir", metavar="DIRECTORY", help="directory in which to create project"
+        "project_dir",
+        metavar="DIRECTORY",
+        help="directory in which to create project",
     )
     parser.add_argument(
         "project_data",
@@ -62,6 +64,12 @@ your option) any later version. There is no warranty.""",
     )
     warnings.showwarning = simple_warning(parser.prog)
     args = parser.parse_args(argv)
+
+    def input_with_default(prompt: str, default: str) -> str:
+        if args.noprompt:
+            return default
+        response = input(f"{prompt} [{default}]: ")
+        return response or default
 
     # Load information from TOML file if supplied
     project = {}

@@ -36,6 +36,7 @@ packages = [
 [tool.setuptools.package-data]
 new_python_project = [
     "template/**",
+    "template/.github/**",
     "template/.gitignore",
     "template/tests/.gitignore"
 ]

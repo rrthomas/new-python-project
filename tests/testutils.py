@@ -14,12 +14,13 @@ from new_python_project import main
 def passing_cli_test(
     capsys: CaptureFixture[str],
     args: list[str],
-    expected: str,
+    expected: str | None = None,
 ) -> None:
     main(args)
-    with open(expected, encoding="utf-8") as fh:
-        expected_text = fh.read()
-        assert capsys.readouterr().out == expected_text
+    if expected is not None:
+        with open(expected, encoding="utf-8") as fh:
+            expected_text = fh.read()
+            assert capsys.readouterr().out == expected_text
 
 
 def failing_cli_test(
