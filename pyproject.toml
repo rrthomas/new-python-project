@@ -34,7 +34,11 @@ packages = [
 ]
 
 [tool.setuptools.package-data]
-new_python_project = ["template/**"]
+new_python_project = [
+    "template/**",
+    "template/.gitignore",
+    "template/tests/.gitignore"
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
