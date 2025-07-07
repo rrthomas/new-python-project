@@ -70,6 +70,6 @@ deps = ["pyright", "pytest", "ruff", "types-setuptools"]
 commands = [
     ["pyright", "new_python_project"],
     ["ruff", "check", "new_python_project"],
-    ["pytest", {replace = "posargs", extend = true}],
+    ["pytest", "-Wdefault", {replace = "posargs", extend = true}],
 ]
 extras = ["test"]

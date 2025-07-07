@@ -56,6 +56,6 @@ deps = ["pyright", "pytest", "ruff", "types-setuptools"]
 commands = [
     ["pyright", "$run(project_module.in.py)"],
     ["ruff", "check", "$run(project_module.in.py)"],
-    ["pytest", {replace = "posargs", extend = true}],
+    ["pytest", "-Wdefault", {replace = "posargs", extend = true}],
 ]
 extras = ["test"]
