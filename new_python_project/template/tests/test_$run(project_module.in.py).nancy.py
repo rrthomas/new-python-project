@@ -58,4 +58,8 @@ def test_invalid_command_line_argument_causes_an_error(
     capsys: CaptureFixture[str],
     caplog: LogCaptureFixture,
 ) -> None:
-    failing_cli_test(capsys, caplog, ["--foo", "a"], "unrecognized arguments: --foo")
+    if sys.version_info < (3, 12, 8):
+        subcommand_list = "'demo'"
+    else:
+        subcommand_list = "demo"
+    failing_cli_test(capsys, caplog, ["--foo", "a"], f"argument SUBCOMMAND: invalid choice: 'a' (choose from {subcommand_list})")
