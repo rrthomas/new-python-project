@@ -8,9 +8,9 @@ authors = [
 ]
 readme = "README.md"
 urls = {Homepage = "https://github.com/rrthomas/python_project"}
-requires-python = ">= 3.12"
+requires-python = ">= 3.13"
 dependencies = [
-    "nancy ~= 11.0",
+    "nancy ~= 13.1",
 ]
 classifiers = [
     "Environment :: Console",
@@ -63,7 +63,7 @@ lines-after-imports = 2
 convention = "google"
 
 [tool.tox]
-env_list = ["3.12", "3.13"]
+env_list = ["3.13", "3.14"]
 
 [tool.tox.env_run_base]
 deps = ["pyright", "pytest", "ruff", "types-setuptools"]
