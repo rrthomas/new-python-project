@@ -5,30 +5,17 @@
 Released under the GPL version 3, or (at your option) any later version.
 """
 
-import os
 import sys
-from collections.abc import Iterator
 from pathlib import Path
 
 import pytest
-from $run(project_module.in.py) import main
 from pytest import CaptureFixture, LogCaptureFixture
 from testutils import failing_cli_test, passing_cli_test
 
+from $run(project_module.in.py) import main
 
-if sys.version_info[:2] >= (3, 11):  # pragma: no cover
-    from contextlib import chdir  # pyright: ignore
-else:  # pragma: no cover
-    from contextlib import contextmanager
 
-    @contextmanager
-    def chdir(path: os.PathLike[str]) -> Iterator[None]:
-        old_dir = os.getcwd()
-        os.chdir(path)
-        try:
-            yield
-        finally:
-            os.chdir(old_dir)
+from contextlib import chdir  # pyright: ignore
 
 
 tests_dir = Path(__file__).parent.resolve() / "test-files"
